@@ -47,22 +47,6 @@ from functions import *
 
 
 
-def readviewtextfile (filename):
-    with open(filename) as f:
-        lines = f.readlines()
-    f.close()
-
-    num_par = len (lines)
-    num_feat = len (lines[0].split (","))
-    feat_matrix = np.zeros ((num_par,num_feat))
-
-    for i in range (num_par):
-        clean_items = lines[i].replace ('\n','')
-        seperated_items = clean_items.split(",")
-
-        for j in range (num_feat):
-            feat_matrix [i][j] = float (seperated_items[j])
-    return feat_matrix
 
 
 # In[4]:
